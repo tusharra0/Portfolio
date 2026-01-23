@@ -19,3 +19,12 @@ body {
   background: #0a0a0a;
   color: #ffffff;
 }
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}

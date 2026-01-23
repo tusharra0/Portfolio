@@ -4,6 +4,7 @@ import FlymingosLogo from './assets/logos/Flymingos.png';
 import GoogleDSCLogo from './assets/logos/GoogleStudentClub.jpg';
 import WealthSeedLogo from './assets/logos/Wealthseed.jpg';
 import UofTLogo from './assets/logos/uoftailogo.jpg';
+import TDLogo from './assets/logos/TD.jpg';
 
 const App = () => {
   const profile = {
@@ -17,9 +18,20 @@ const App = () => {
 
   const experience = [
     {
+      company: "TD Bank",
+      role: "Software Engineer Intern",
+      period: "Incoming/Summer 2026",
+      logo: (
+        <div className="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-100 overflow-hidden flex items-center justify-center">
+          <img src={TDLogo} alt="TD Bank logo" className="w-full h-full object-cover" />
+        </div>
+      ),
+      description: "Incoming Software Engineer Intern for the Summer 2026 term. Joining the Global Technology & Solutions team to build scalable banking infrastructure."
+    },
+    {
       company: "Flymingos",
       role: "Software Engineer Intern",
-      period: "May 2025 – Aug 2025",
+      period: "Summer 2025",
       logo: (
         <div className="w-10 h-10 rounded-full bg-orange-50 border border-orange-100 overflow-hidden flex items-center justify-center">
           <img src={FlymingosLogo} alt="Flymingos logo" className="w-full h-full object-cover" />
@@ -30,7 +42,7 @@ const App = () => {
     {
       company: "WealthSeed",
       role: "Software Engineer Intern",
-      period: "Jan 2025 – Apr 2025",
+      period: "Winter 2025",
       logo: (
         <div className="w-10 h-10 rounded-full bg-green-50 border border-green-100 overflow-hidden flex items-center justify-center">
           <img src={WealthSeedLogo} alt="WealthSeed logo" className="w-full h-full object-cover" />
@@ -39,9 +51,9 @@ const App = () => {
       description: "Built financial education features using Next.js and integrated LangChain RAG chatbots, automating support for 300+ active users."
     },
     {
-      company: "Google DSC",
+      company: "Google Student Developer Clubs",
       role: "Software Engineer",
-      period: "Jan 2025 – Apr 2025",
+      period: "Winter 2025",
       logo: (
         <div className="w-10 h-10 rounded-full bg-blue-50 border border-blue-100 overflow-hidden flex items-center justify-center">
           <img src={GoogleDSCLogo} alt="Google Developer Student Clubs logo" className="w-full h-full object-cover" />
@@ -52,7 +64,7 @@ const App = () => {
     {
       company: "UofT AI",
       role: "Web Developer",
-      period: "Sep 2024 – Dec 2024",
+      period: "Fall 2025",
       logo: (
         <div className="w-10 h-10 rounded-full bg-neutral-50 border border-neutral-200 overflow-hidden flex items-center justify-center">
           <img src={UofTLogo} alt="UofT AI logo" className="w-full h-full object-cover" />
@@ -66,30 +78,30 @@ const App = () => {
     {
       title: "Fault Tolerant Order System",
       tech: "Python • FastAPI • RabbitMQ • AWS",
-      link: "https://github.com/tusharra0",
+      link: "https://github.com/tusharra0/Fault-Tolerant-Order-System",
       description: "Architected a distributed system with 4 microservices. Implemented retry mechanisms and dead letter queues achieving 99% recovery rate in failure scenarios."
     },
     {
       title: "Distributed Search Engine",
       tech: "Java • Spring Boot • Docker • JMH",
-      link: "https://github.com/tusharra0",
+      link: "https://github.com/tusharra0/Distributed-Search-Engine",
       description: "Built a full-text search engine with an inverted index and TF-IDF ranking. Sustained 5k+ queries/sec under 200ms latency."
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white">
-      <main className="max-w-3xl mx-auto px-6 py-24 md:py-40">
+    <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white overflow-x-hidden">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-40">
         
         {/* Header Section */}
-        <section className="mb-32">
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
+        <section className="mb-16 sm:mb-24 md:mb-32">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-6 sm:mb-8">
             {profile.name}
           </h1>
-          <p className="text-xl md:text-2xl text-neutral-500 font-light leading-relaxed max-w-xl mb-10 italic">
+          <p className="text-lg sm:text-xl md:text-2xl text-neutral-500 font-light leading-relaxed max-w-xl mb-8 sm:mb-10 italic">
             {profile.bio}
           </p>
-          <div className="flex gap-8">
+          <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8">
             <a href={profile.github} target="_blank" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:opacity-50 transition-opacity">
               Github <ArrowUpRight size={14} />
             </a>
@@ -103,24 +115,24 @@ const App = () => {
         </section>
 
         {/* Linear Content Flow */}
-        <div className="space-y-32">
+        <div className="space-y-16 sm:space-y-24 md:space-y-32">
           
           {/* Experience Section */}
           <section>
-            <h2 className="text-[10px] uppercase tracking-[0.3em] text-neutral-400 font-black mb-12 flex items-center gap-4">
-              <span className="h-[1px] w-12 bg-neutral-200"></span>
+            <h2 className="text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-neutral-400 font-black mb-8 sm:mb-10 md:mb-12 flex items-center gap-3 sm:gap-4">
+              <span className="h-[1px] w-8 sm:w-12 bg-neutral-200"></span>
               Experience
             </h2>
-            <div className="space-y-16">
+            <div className="space-y-10 sm:space-y-12 md:space-y-16">
               {experience.map((exp, idx) => (
-                <div key={idx} className="flex gap-6 md:gap-10 group">
+                <div key={idx} className="flex gap-4 sm:gap-6 md:gap-10 group">
                   <div className="flex-shrink-0 pt-1">
                     {exp.logo}
                   </div>
-                  <div className="flex-grow border-l border-neutral-100 pl-8 group-hover:border-neutral-900 transition-colors duration-500">
-                    <div className="flex justify-between items-baseline mb-2">
-                      <h3 className="text-xl font-bold tracking-tight">{exp.company}</h3>
-                      <span className="text-xs font-mono text-neutral-400">{exp.period}</span>
+                  <div className="flex-grow border-l border-neutral-100 pl-4 sm:pl-6 md:pl-8 group-hover:border-neutral-900 transition-colors duration-500 min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2 gap-1">
+                      <h3 className="text-lg sm:text-xl font-bold tracking-tight">{exp.company}</h3>
+                      <span className="text-[10px] sm:text-xs font-mono text-neutral-400 whitespace-nowrap">{exp.period}</span>
                     </div>
                     <p className="text-sm font-bold text-neutral-500 uppercase tracking-wider mb-4">{exp.role}</p>
                     <p className="text-neutral-600 leading-relaxed text-sm md:text-base">
@@ -134,30 +146,30 @@ const App = () => {
 
           {/* Projects Section */}
           <section>
-            <h2 className="text-[10px] uppercase tracking-[0.3em] text-neutral-400 font-black mb-12 flex items-center gap-4">
-              <span className="h-[1px] w-12 bg-neutral-200"></span>
+            <h2 className="text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-neutral-400 font-black mb-8 sm:mb-10 md:mb-12 flex items-center gap-3 sm:gap-4">
+              <span className="h-[1px] w-8 sm:w-12 bg-neutral-200"></span>
               Featured Projects
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {projects.map((project, idx) => (
                 <div
                   key={idx}
-                  className="group relative w-full p-10 md:p-12 -mx-8 rounded-[2rem] bg-neutral-50 text-black transition-all duration-500 ease-in-out hover:bg-black hover:text-white"
+                  className="group relative w-full p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl sm:rounded-[2rem] bg-neutral-50 text-black transition-all duration-500 ease-in-out hover:bg-black hover:text-white"
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2 rounded-lg bg-black text-white transition-all duration-500 ease-in-out group-hover:bg-white group-hover:text-black">
-                      <Cpu size={16} />
+                  <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                    <div className="p-1.5 sm:p-2 rounded-lg bg-black text-white transition-all duration-500 ease-in-out group-hover:bg-white group-hover:text-black">
+                      <Cpu size={14} className="sm:w-4 sm:h-4" />
                     </div>
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 ease-in-out group-hover:text-neutral-200">
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-500 transition-colors duration-500 ease-in-out group-hover:text-neutral-200">
                       {project.tech}
                     </span>
                   </div>
                   <div className="flex justify-between items-start">
-                    <div className="space-y-4">
-                      <h3 className="text-2xl md:text-[28px] font-bold tracking-tighter transition-colors duration-500 ease-in-out">
+                    <div className="space-y-3 sm:space-y-4">
+                      <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold tracking-tighter transition-colors duration-500 ease-in-out">
                         {project.title}
                       </h3>
-                      <p className="text-sm md:text-base leading-relaxed text-neutral-600 transition-colors duration-500 ease-in-out group-hover:text-neutral-100 max-w-2xl">
+                      <p className="text-sm md:text-base leading-relaxed text-neutral-600 transition-colors duration-500 ease-in-out group-hover:text-neutral-100">
                         {project.description}
                       </p>
                       <a
@@ -177,9 +189,9 @@ const App = () => {
         </div>
 
         {/* Footer */}
-        <footer className="mt-48 pt-12 border-t border-neutral-100 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-neutral-400 uppercase tracking-[0.4em] font-bold">
+        <footer className="mt-24 sm:mt-32 md:mt-48 pt-8 sm:pt-12 border-t border-neutral-100 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-[10px] text-neutral-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] font-bold">
           <div className="hover:text-black transition-colors cursor-default">Tushar Rao — 2026</div>
-          <div className="flex gap-12">
+          <div className="flex gap-8 sm:gap-12">
             <a href={profile.github} className="hover:text-black transition-colors">GH</a>
             <a href={profile.linkedin} className="hover:text-black transition-colors">LI</a>
             <a href={`mailto:${profile.email}`} className="hover:text-black transition-colors">EM</a>
