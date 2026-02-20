@@ -1,202 +1,123 @@
-import React from 'react';
-import { ArrowUpRight, Cpu } from 'lucide-react';
-import FlymingosLogo from './assets/logos/Flymingos.png';
-import GoogleDSCLogo from './assets/logos/GoogleStudentClub.jpg';
-import WealthSeedLogo from './assets/logos/Wealthseed.jpg';
-import UofTLogo from './assets/logos/uoftailogo.jpg';
-import TDLogo from './assets/logos/TD.jpg';
+import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
+import AmazonLogo  from './assets/logos/Amazon.jpg';
+import UofTLogo    from './assets/logos/Utoronto_coa.svg';
+import GDSCLogo    from './assets/logos/GDSC.jpg';
+import UofTAILogo  from './assets/logos/uoftailogo.jpg';
 
 const App = () => {
+  const [openIdx, setOpenIdx] = useState(null);
+
   const profile = {
-    name: "Tushar Rao",
-    title: "Software Engineer @ UofT",
-    bio: "Computer Science & Mathematics student at the University of Toronto, focused on backend engineering, system design, and building scalable infrastructure.",
-    email: "tusharpatangemohan@gmail.com",
-    github: "https://github.com/tusharra0",
-    linkedin: "https://linkedin.com/in/tusharra0"
+    email:    "tusharpatangemohan@gmail.com",
+    github:   "https://github.com/tusharro0",
+    linkedin: "https://linkedin.com/in/tusharra0",
   };
 
-  const experience = [
+  const work = [
     {
-      company: "TD Bank",
-      role: "Software Engineer Intern",
-      period: "Incoming/Summer 2026",
-      logo: (
-        <div className="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-100 overflow-hidden flex items-center justify-center">
-          <img src={TDLogo} alt="TD Bank logo" className="w-full h-full object-cover" />
-        </div>
-      ),
-      description: "Incoming Software Engineer Intern for the Summer 2026 term. Joining the Global Technology & Solutions team to build scalable banking infrastructure."
+      logoSrc: AmazonLogo,
+      company: "Amazon",
+      role:    "Software Dev Intern - AI/ML",
+      date:    "Summer '26",
+      content: "Incoming intern on the AI/ML infrastructure team. Will be working on large-scale distributed systems powering Amazon's machine learning pipelines and model serving infrastructure.",
     },
     {
-      company: "Flymingos",
-      role: "Software Engineer Intern",
-      period: "Summer 2025",
-      logo: (
-        <div className="w-10 h-10 rounded-full bg-orange-50 border border-orange-100 overflow-hidden flex items-center justify-center">
-          <img src={FlymingosLogo} alt="Flymingos logo" className="w-full h-full object-cover" />
-        </div>
-      ),
-      description: "Built backend systems for a B2B marketplace that matchmakes international buyers and sellers, focusing on scalable APIs, async processing, and performance optimization."
+      logoSrc: UofTLogo,
+      company: "UofT",
+      role:    "Software Engineer Intern",
+      date:    "Summer '25",
+      content: "Built scalable backend services for a B2B marketplace platform. Worked closely with cross-functional teams to design RESTful APIs and optimize database performance.",
     },
     {
-      company: "WealthSeed",
-      role: "Software Engineer Intern",
-      period: "Winter 2025",
-      logo: (
-        <div className="w-10 h-10 rounded-full bg-green-50 border border-green-100 overflow-hidden flex items-center justify-center">
-          <img src={WealthSeedLogo} alt="WealthSeed logo" className="w-full h-full object-cover" />
-        </div>
-      ),
-      description: "Built financial education features using Next.js and integrated LangChain RAG chatbots, automating support for 300+ active users."
+      logoSrc: GDSCLogo,
+      company: "GDSC",
+      role:    "Student Software Engineer",
+      date:    "Winter '25",
+      content: "Collaborated on an ML-powered stock trading simulator. Trained LSTM models for price forecasting and integrated predictions into a full-stack React application.",
     },
     {
-      company: "Google Student Developer Clubs",
-      role: "Software Engineer",
-      period: "Winter 2025",
-      logo: (
-        <div className="w-10 h-10 rounded-full bg-blue-50 border border-blue-100 overflow-hidden flex items-center justify-center">
-          <img src={GoogleDSCLogo} alt="Google Developer Student Clubs logo" className="w-full h-full object-cover" />
-        </div>
-      ),
-      description: "Collaborated on an ML-powered stock trading simulator, training LSTM and RNN models for price forecasting and integrating them into a full-stack web application."
-    },
-    {
+      logoSrc: UofTAILogo,
       company: "UofT AI",
-      role: "Web Developer",
-      period: "Fall 2025",
-      logo: (
-        <div className="w-10 h-10 rounded-full bg-neutral-50 border border-neutral-200 overflow-hidden flex items-center justify-center">
-          <img src={UofTLogo} alt="UofT AI logo" className="w-full h-full object-cover" />
-        </div>
-      ),
-      description: "Developed responsive web applications using React and Chakra UI. Implemented CI/CD pipelines and improved accessibility compliance."
-    }
+      role:    "Web Developer",
+      date:    "Fall '25",
+      content: "Developed and maintained responsive web applications using React and Chakra UI. Implemented CI/CD pipelines and improved accessibility compliance across the platform.",
+    },
   ];
 
-  const projects = [
-    {
-      title: "Fault Tolerant Order System",
-      tech: "Python • FastAPI • RabbitMQ • AWS",
-      link: "https://github.com/tusharra0/Fault-Tolerant-Order-System",
-      description: "Architected a distributed system with 4 microservices. Implemented retry mechanisms and dead letter queues achieving 99% recovery rate in failure scenarios."
-    },
-    {
-      title: "Distributed Search Engine",
-      tech: "Java • Spring Boot • Docker • JMH",
-      link: "https://github.com/tusharra0/Distributed-Search-Engine",
-      description: "Built a full-text search engine with an inverted index and TF-IDF ranking. Sustained 5k+ queries/sec under 200ms latency."
-    }
-  ];
+  const toggle = (idx) => setOpenIdx(openIdx === idx ? null : idx);
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white overflow-x-hidden">
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-40">
-        
-        {/* Header Section */}
-        <section className="mb-16 sm:mb-24 md:mb-32">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-6 sm:mb-8">
-            {profile.name}
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-neutral-500 font-light leading-relaxed max-w-xl mb-8 sm:mb-10 italic">
-            {profile.bio}
+    <div className="min-h-screen selection:bg-[#1a1a1a] selection:text-[#eceae6]">
+      <main className="w-full max-w-2xl mx-auto px-8 sm:px-12 lg:px-16 py-6 sm:py-14 lg:py-20">
+
+        {/* Name */}
+        <h1 className="text-lg sm:text-2xl font-semibold text-black tracking-tight mb-5 sm:mb-10 lg:mb-14">
+          Tushar Rao
+        </h1>
+
+        {/* About */}
+        <section className="mb-4 sm:mb-7 lg:mb-11">
+          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#999] mb-2 sm:mb-3 lg:mb-5">about</p>
+          <p className="text-sm sm:text-base text-[#555] leading-relaxed">
+            I'm a Computer Science student at UofT, graduating in June 2027. This summer, I'll be joining Amazon as a Software Dev Intern on the Ring team, working on AI/ML systems.
+            <br /><br />
+            Interested in gen AI, LLMs, and distributed systems. Feel free to reach out if you'd like to connect.
           </p>
-          <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8">
-            <a href={profile.github} target="_blank" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:opacity-50 transition-opacity">
-              Github <ArrowUpRight size={14} />
-            </a>
-            <a href={profile.linkedin} target="_blank" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:opacity-50 transition-opacity">
-              LinkedIn <ArrowUpRight size={14} />
-            </a>
-            <a href={`mailto:${profile.email}`} className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:opacity-50 transition-opacity">
-              Contact <ArrowUpRight size={14} />
-            </a>
+        </section>
+
+        {/* Work */}
+        <section className="mb-4 sm:mb-7 lg:mb-11">
+          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#999] mb-2 sm:mb-3 lg:mb-5">work</p>
+
+          <div className="w-full border-t border-[#d8d6d2]">
+            {work.map((item, idx) => (
+              <div key={idx} className="w-full border-b border-[#d8d6d2]">
+
+                {/* Row */}
+                <button
+                  onClick={() => toggle(idx)}
+                  className="w-full grid grid-cols-[1fr_auto] items-center py-2.5 sm:py-3.5 lg:py-4 text-left group"
+                >
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <img
+                      src={item.logoSrc}
+                      alt={item.company}
+                      className="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0 bg-white"
+                    />
+                    <span className="text-sm sm:text-base font-semibold text-black whitespace-nowrap">{item.company}</span>
+                    <span className="text-sm sm:text-base text-[#777] whitespace-nowrap">{item.role}</span>
+                  </div>
+                  <div className="flex items-center gap-2 pl-4">
+                    <span className="text-[10px] sm:text-xs text-[#aaa] opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                      {item.date}
+                    </span>
+                    <ChevronDown
+                      size={12}
+                      className={`text-[#aaa] transition-transform duration-200 ${openIdx === idx ? 'rotate-180' : ''}`}
+                    />
+                  </div>
+                </button>
+
+                {/* Dropdown content */}
+                <div className={`overflow-hidden transition-all duration-200 ease-out ${openIdx === idx ? 'max-h-40 pb-2.5 sm:pb-4' : 'max-h-0'}`}>
+                  <p className="text-xs sm:text-sm text-[#666] leading-relaxed pl-8 sm:pl-10 pr-4">
+                    {item.content}
+                  </p>
+                </div>
+
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* Linear Content Flow */}
-        <div className="space-y-16 sm:space-y-24 md:space-y-32">
-          
-          {/* Experience Section */}
-          <section>
-            <h2 className="text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-neutral-400 font-black mb-8 sm:mb-10 md:mb-12 flex items-center gap-3 sm:gap-4">
-              <span className="h-[1px] w-8 sm:w-12 bg-neutral-200"></span>
-              Experience
-            </h2>
-            <div className="space-y-10 sm:space-y-12 md:space-y-16">
-              {experience.map((exp, idx) => (
-                <div key={idx} className="flex gap-4 sm:gap-6 md:gap-10 group">
-                  <div className="flex-shrink-0 pt-1">
-                    {exp.logo}
-                  </div>
-                  <div className="flex-grow border-l border-neutral-100 pl-4 sm:pl-6 md:pl-8 group-hover:border-neutral-900 transition-colors duration-500 min-w-0">
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2 gap-1">
-                      <h3 className="text-lg sm:text-xl font-bold tracking-tight">{exp.company}</h3>
-                      <span className="text-[10px] sm:text-xs font-mono text-neutral-400 whitespace-nowrap">{exp.period}</span>
-                    </div>
-                    <p className="text-sm font-bold text-neutral-500 uppercase tracking-wider mb-4">{exp.role}</p>
-                    <p className="text-neutral-600 leading-relaxed text-sm md:text-base">
-                      {exp.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Projects Section */}
-          <section>
-            <h2 className="text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-neutral-400 font-black mb-8 sm:mb-10 md:mb-12 flex items-center gap-3 sm:gap-4">
-              <span className="h-[1px] w-8 sm:w-12 bg-neutral-200"></span>
-              Featured Projects
-            </h2>
-            <div className="space-y-4 sm:space-y-6">
-              {projects.map((project, idx) => (
-                <div
-                  key={idx}
-                  className="group relative w-full p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl sm:rounded-[2rem] bg-neutral-50 text-black transition-all duration-500 ease-in-out hover:bg-black hover:text-white"
-                >
-                  <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                    <div className="p-1.5 sm:p-2 rounded-lg bg-black text-white transition-all duration-500 ease-in-out group-hover:bg-white group-hover:text-black">
-                      <Cpu size={14} className="sm:w-4 sm:h-4" />
-                    </div>
-                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] text-neutral-500 transition-colors duration-500 ease-in-out group-hover:text-neutral-200">
-                      {project.tech}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-start">
-                    <div className="space-y-3 sm:space-y-4">
-                      <h3 className="text-xl sm:text-2xl md:text-[28px] font-bold tracking-tighter transition-colors duration-500 ease-in-out">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm md:text-base leading-relaxed text-neutral-600 transition-colors duration-500 ease-in-out group-hover:text-neutral-100">
-                        {project.description}
-                      </p>
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 border-black pb-1 transition-all duration-500 ease-in-out group-hover:border-white"
-                      >
-                        Source Code <ArrowUpRight size={14} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
+        {/* Links */}
+        <div className="flex items-center gap-4 sm:gap-5">
+          <a href={profile.github}   target="_blank" rel="noreferrer" className="text-[10px] sm:text-xs text-[#aaa] hover:text-black transition-colors duration-150">github</a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-[10px] sm:text-xs text-[#aaa] hover:text-black transition-colors duration-150">linkedin</a>
+          <a href={`mailto:${profile.email}`}                         className="text-[10px] sm:text-xs text-[#aaa] hover:text-black transition-colors duration-150">email</a>
         </div>
 
-        {/* Footer */}
-        <footer className="mt-24 sm:mt-32 md:mt-48 pt-8 sm:pt-12 border-t border-neutral-100 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-[10px] text-neutral-400 uppercase tracking-[0.3em] sm:tracking-[0.4em] font-bold">
-          <div className="hover:text-black transition-colors cursor-default">Tushar Rao — 2026</div>
-          <div className="flex gap-8 sm:gap-12">
-            <a href={profile.github} className="hover:text-black transition-colors">GH</a>
-            <a href={profile.linkedin} className="hover:text-black transition-colors">LI</a>
-            <a href={`mailto:${profile.email}`} className="hover:text-black transition-colors">EM</a>
-          </div>
-        </footer>
       </main>
     </div>
   );
