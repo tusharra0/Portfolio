@@ -10,7 +10,7 @@ const App = () => {
 
   const profile = {
     email:    "tusharpatangemohan@gmail.com",
-    github:   "https://github.com/tusharro0",
+    github:   "https://github.com/tusharrao0",
     linkedin: "https://linkedin.com/in/tusharra0",
   };
 
