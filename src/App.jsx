@@ -20,21 +20,21 @@ const App = () => {
       company: "Amazon",
       role:    "Software Dev Intern - AI/ML",
       date:    "Summer '26",
-      content: "Incoming intern on the AI/ML infrastructure team. Will be working on large-scale distributed systems powering Amazon's machine learning pipelines and model serving infrastructure.",
+      content: "Incoming SDE Intern, Amazon Ring.",
     },
     {
       logoSrc: UofTLogo,
       company: "UofT",
       role:    "Software Engineer Intern",
       date:    "Summer '25",
-      content: "Built scalable backend services for a B2B marketplace platform. Worked closely with cross-functional teams to design RESTful APIs and optimize database performance.",
+      content: "I built and owned the AI matchmaking engine, created agents that handled the full buyer-seller matching flow using OpenAI embeddings and Chroma vector search, improved accuracy by 35% and scaled it to 500+ concurrent users.",
     },
     {
       logoSrc: GDSCLogo,
       company: "GDSC",
       role:    "Student Software Engineer",
       date:    "Winter '25",
-      content: "Collaborated on an ML-powered stock trading simulator. Trained LSTM models for price forecasting and integrated predictions into a full-stack React application.",
+      content:"I collaborated on a full stack trading simulator, built the data pipeline for real time market feeds, and trained ML models including LSTM and kernel regression for price forecasting, improving prediction accuracy by 25%.",
     },
     {
       logoSrc: UofTAILogo,
@@ -60,7 +60,7 @@ const App = () => {
         <section className="mb-4 sm:mb-7 lg:mb-11">
           <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#999] mb-2 sm:mb-3 lg:mb-5">about</p>
           <p className="text-sm sm:text-base text-[#555] leading-relaxed">
-            I'm a Computer Science student at UofT, graduating in June 2027. This summer, I'll be joining Amazon as a Software Dev Intern on the Ring team, working on AI/ML systems.
+            I'm a Computer Science student at UofT, graduating in June 2028. This summer, I'll be joining Amazon as a Software Dev Intern on the Ring team, working on AI/ML systems.
             <br /><br />
             Interested in gen AI, LLMs, and distributed systems. Feel free to reach out if you'd like to connect.
           </p>
