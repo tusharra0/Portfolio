@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html, body, #root {
@@ -20,9 +20,9 @@ html, body, #root {
 }
 
 body {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
-  background-color: #0a0a0a;
-  color: #e0e0e0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #fafafa;
+  color: #2a2a2a;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -35,7 +35,7 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 180px 180px;
-  opacity: 0.03;
+  opacity: 0.035;
   pointer-events: none;
   z-index: 9999;
 }
@@ -43,11 +43,11 @@ body::before {
 /* Orange selection */
 ::selection {
   background: #e8630a;
-  color: #0a0a0a;
+  color: #fff;
 }
 
 a.inline-link {
-  color: #e0e0e0;
+  color: #2a2a2a;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;

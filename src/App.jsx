@@ -3,6 +3,12 @@ import UofTLogo from './assets/logos/Utoronto_coa.svg';
 import GDSCLogo from './assets/logos/GDSC.jpg';
 import UofTAILogo from './assets/logos/uoftailogo.jpg';
 
+const ConstructsLogo = () => (
+  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-[#f0f0f0] border border-[#e0e0e0] flex items-center justify-center flex-shrink-0">
+    <span className="text-black text-xs sm:text-sm font-bold">C.</span>
+  </div>
+);
+
 const App = () => {
   const profile = {
     email: "tusharpatangemohan@gmail.com",
@@ -14,9 +20,16 @@ const App = () => {
     {
       logoSrc: AmazonLogo,
       company: "amazon",
-      role: "software dev intern — ai/ml",
-      desc: "building on the ring team, ai/ml systems",
+      role: "software dev intern, ai",
+      desc: "incoming sde intern, amazon ring",
       date: "summer 2026",
+    },
+    {
+      logo: "constructs",
+      company: "constructai",
+      role: "founding engineer",
+      desc: "ai-powered construction tender estimation",
+      date: "2025 - present",
     },
     {
       logoSrc: UofTLogo,
@@ -42,75 +55,79 @@ const App = () => {
   ];
 
   return (
-    <div className="h-screen w-screen overflow-hidden flex flex-col">
+    <div className="h-screen w-screen overflow-hidden flex flex-col items-center">
       {/* Header */}
-      <header className="pt-8 sm:pt-12 pb-4 sm:pb-6 text-center flex-shrink-0">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white uppercase">
+      <header className="flex-shrink-0 pt-10 sm:pt-14 pb-6 sm:pb-10">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-black uppercase text-center">
           Tushar Rao
         </h1>
       </header>
 
       {/* Main content */}
-      <main className="flex-1 w-full max-w-5xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-center">
-        {/* Two column layout */}
-        <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-y-6 md:gap-x-16 lg:gap-x-24">
+      <main className="flex-1 w-full max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-y-6 md:gap-x-12 lg:gap-x-20">
 
           {/* About */}
-          <p className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-[#666] self-start pt-0.5">
+          <p className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-[#999] self-start pt-0.5">
             about
           </p>
-          <div className="text-sm sm:text-base text-[#b0b0b0] leading-relaxed space-y-3">
+          <div className="text-sm sm:text-base text-[#555] leading-relaxed space-y-3">
             <p>
-              cs student at{' '}
+              third year cs student at{' '}
               <a href="https://www.utoronto.ca" target="_blank" rel="noreferrer" className="inline-link">
                 u of t
               </a>
-              {' '}— joining{' '}
+              , joining{' '}
               <a href="https://www.amazon.com" target="_blank" rel="noreferrer" className="inline-link">
                 amazon
               </a>
-              {' '}this summer on ring, working on ai/ml.
+              {' '}this summer.
             </p>
             <p>
-              interested in gen ai, llms, and distributed systems.
-            </p>
-            <p>
-              don't be a stranger, reach out — {' '}
-              <a href={`mailto:${profile.email}`} className="inline-link">
-                {profile.email}
+              currently building{' '}
+              <a href="https://constructsai.com" target="_blank" rel="noreferrer" className="inline-link">
+                constructai
               </a>
+              {' '}— ai that estimates construction tenders.
+            </p>
+            <p>
+              interested in applied ai, backend, and distributed systems.
             </p>
           </div>
 
           {/* Experience */}
-          <p className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-[#666] self-start pt-1 mt-4 md:mt-6">
+          <p className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-[#999] self-start pt-1 mt-4 md:mt-6">
             experience
           </p>
           <div className="space-y-0 mt-4 md:mt-6">
             {work.map((item, idx) => (
               <div
                 key={idx}
-                className="group flex items-center gap-3 sm:gap-4 py-2.5 sm:py-3"
+                className="group flex items-center gap-3 sm:gap-4 py-2 sm:py-2.5"
               >
-                <img
-                  src={item.logoSrc}
-                  alt={item.company}
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-md object-cover flex-shrink-0 bg-[#1a1a1a]"
-                />
+                {item.logo === "constructs" ? (
+                  <ConstructsLogo />
+                ) : (
+                  <img
+                    src={item.logoSrc}
+                    alt={item.company}
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-md object-cover flex-shrink-0 bg-white"
+                  />
+                )}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-sm sm:text-base font-semibold text-white">
+                    <span className="text-sm sm:text-base font-semibold text-black">
                       {item.role}
                     </span>
-                    <span className="text-sm sm:text-base text-[#666]">
+                    <span className="text-sm sm:text-base text-[#999]">
                       @ {item.company}
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#555] mt-0.5 truncate">
+                  <p className="text-xs sm:text-sm text-[#aaa] mt-0.5 truncate">
                     {item.desc}
                   </p>
                 </div>
-                <span className="text-xs text-[#444] whitespace-nowrap flex-shrink-0 hidden sm:block">
+                <span className="text-xs text-[#bbb] whitespace-nowrap flex-shrink-0 hidden sm:block">
                   {item.date}
                 </span>
               </div>
@@ -125,7 +142,7 @@ const App = () => {
           href={profile.github}
           target="_blank"
           rel="noreferrer"
-          className="text-xs sm:text-sm text-[#555] hover:text-white transition-colors duration-150 underline underline-offset-4 decoration-[#333]"
+          className="text-xs sm:text-sm text-[#aaa] hover:text-black transition-colors duration-150 underline underline-offset-4 decoration-[#ddd]"
         >
           github
         </a>
@@ -133,13 +150,13 @@ const App = () => {
           href={profile.linkedin}
           target="_blank"
           rel="noreferrer"
-          className="text-xs sm:text-sm text-[#555] hover:text-white transition-colors duration-150 underline underline-offset-4 decoration-[#333]"
+          className="text-xs sm:text-sm text-[#aaa] hover:text-black transition-colors duration-150 underline underline-offset-4 decoration-[#ddd]"
         >
           linkedin
         </a>
         <a
           href={`mailto:${profile.email}`}
-          className="text-xs sm:text-sm text-[#555] hover:text-white transition-colors duration-150 underline underline-offset-4 decoration-[#333]"
+          className="text-xs sm:text-sm text-[#aaa] hover:text-black transition-colors duration-150 underline underline-offset-4 decoration-[#ddd]"
         >
           email
         </a>
