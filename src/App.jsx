@@ -1,124 +1,149 @@
-import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
-import AmazonLogo  from './assets/logos/Amazon.jpg';
-import UofTLogo    from './assets/logos/Utoronto_coa.svg';
-import GDSCLogo    from './assets/logos/GDSC.jpg';
-import UofTAILogo  from './assets/logos/uoftailogo.jpg';
+import AmazonLogo from './assets/logos/Amazon.jpg';
+import UofTLogo from './assets/logos/Utoronto_coa.svg';
+import GDSCLogo from './assets/logos/GDSC.jpg';
+import UofTAILogo from './assets/logos/uoftailogo.jpg';
 
 const App = () => {
-  const [openIdx, setOpenIdx] = useState(null);
-
   const profile = {
-    email:    "tusharpatangemohan@gmail.com",
-    github:   "https://github.com/tusharrao0",
+    email: "tusharpatangemohan@gmail.com",
+    github: "https://github.com/tusharrao0",
     linkedin: "https://linkedin.com/in/tusharra0",
   };
 
   const work = [
     {
       logoSrc: AmazonLogo,
-      company: "Amazon",
-      role:    "Software Dev Intern - AI/ML",
-      date:    "Summer '26",
-      content: "Incoming SDE Intern, Amazon Ring.",
+      company: "amazon",
+      role: "software dev intern — ai/ml",
+      desc: "building on the ring team, ai/ml systems",
+      date: "summer 2026",
     },
     {
       logoSrc: UofTLogo,
-      company: "UofT",
-      role:    "Software Engineer Intern",
-      date:    "Summer '25",
-      content: "I built and owned the AI matchmaking engine, created agents that handled the full buyer-seller matching flow using OpenAI embeddings and Chroma vector search, improved accuracy by 35% and scaled it to 500+ concurrent users.",
+      company: "uoft",
+      role: "software engineer intern",
+      desc: "ai matchmaking engine with openai embeddings & vector search",
+      date: "summer 2025",
     },
     {
       logoSrc: GDSCLogo,
-      company: "GDSC",
-      role:    "Student Software Engineer",
-      date:    "Winter '25",
-      content:"I collaborated on a full stack trading simulator, built the data pipeline for real time market feeds, and trained ML models including LSTM and kernel regression for price forecasting, improving prediction accuracy by 25%.",
+      company: "gdsc",
+      role: "student software engineer",
+      desc: "full stack trading simulator, ml price forecasting",
+      date: "winter 2025",
     },
     {
       logoSrc: UofTAILogo,
-      company: "UofT AI",
-      role:    "Web Developer",
-      date:    "Fall '25",
-      content: "Developed and maintained responsive web applications using React and Chakra UI. Implemented CI/CD pipelines and improved accessibility compliance across the platform.",
+      company: "uoft ai",
+      role: "web developer",
+      desc: "responsive web apps with react & chakra ui",
+      date: "fall 2025",
     },
   ];
 
-  const toggle = (idx) => setOpenIdx(openIdx === idx ? null : idx);
-
   return (
-    <div className="min-h-screen selection:bg-[#1a1a1a] selection:text-[#eceae6]">
-      <main className="w-full max-w-2xl mx-auto px-8 sm:px-12 lg:px-16 py-6 sm:py-14 lg:py-20">
-
-        {/* Name */}
-        <h1 className="text-lg sm:text-2xl font-semibold text-black tracking-tight mb-5 sm:mb-10 lg:mb-14">
+    <div className="h-screen w-screen overflow-hidden flex flex-col">
+      {/* Header */}
+      <header className="pt-8 sm:pt-12 pb-4 sm:pb-6 text-center flex-shrink-0">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white uppercase">
           Tushar Rao
         </h1>
+      </header>
 
-        {/* About */}
-        <section className="mb-4 sm:mb-7 lg:mb-11">
-          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#999] mb-2 sm:mb-3 lg:mb-5">about</p>
-          <p className="text-sm sm:text-base text-[#555] leading-relaxed">
-            I'm a Computer Science student at UofT, graduating in June 2028. This summer, I'll be joining Amazon as a Software Dev Intern on the Ring team, working on AI/ML systems.
-            <br /><br />
-            Interested in gen AI, LLMs, and distributed systems. Feel free to reach out if you'd like to connect.
+      {/* Main content */}
+      <main className="flex-1 w-full max-w-5xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-center">
+        {/* Two column layout */}
+        <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-y-6 md:gap-x-16 lg:gap-x-24">
+
+          {/* About */}
+          <p className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-[#666] self-start pt-0.5">
+            about
           </p>
-        </section>
+          <div className="text-sm sm:text-base text-[#b0b0b0] leading-relaxed space-y-3">
+            <p>
+              cs student at{' '}
+              <a href="https://www.utoronto.ca" target="_blank" rel="noreferrer" className="inline-link">
+                u of t
+              </a>
+              {' '}— joining{' '}
+              <a href="https://www.amazon.com" target="_blank" rel="noreferrer" className="inline-link">
+                amazon
+              </a>
+              {' '}this summer on ring, working on ai/ml.
+            </p>
+            <p>
+              interested in gen ai, llms, and distributed systems.
+            </p>
+            <p>
+              don't be a stranger, reach out — {' '}
+              <a href={`mailto:${profile.email}`} className="inline-link">
+                {profile.email}
+              </a>
+            </p>
+          </div>
 
-        {/* Work */}
-        <section className="mb-4 sm:mb-7 lg:mb-11">
-          <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#999] mb-2 sm:mb-3 lg:mb-5">work</p>
-
-          <div className="w-full border-t border-[#d8d6d2]">
+          {/* Experience */}
+          <p className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-[#666] self-start pt-1 mt-4 md:mt-6">
+            experience
+          </p>
+          <div className="space-y-0 mt-4 md:mt-6">
             {work.map((item, idx) => (
-              <div key={idx} className="w-full border-b border-[#d8d6d2]">
-
-                {/* Row */}
-                <button
-                  onClick={() => toggle(idx)}
-                  className="w-full grid grid-cols-[1fr_auto] items-center py-2.5 sm:py-3.5 lg:py-4 text-left group"
-                >
-                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                    <img
-                      src={item.logoSrc}
-                      alt={item.company}
-                      className="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover flex-shrink-0 bg-white"
-                    />
-                    <span className="text-sm sm:text-base font-semibold text-black whitespace-nowrap">{item.company}</span>
-                    <span className="text-sm sm:text-base text-[#777] whitespace-nowrap">{item.role}</span>
-                  </div>
-                  <div className="flex items-center gap-2 pl-4">
-                    <span className="text-[10px] sm:text-xs text-[#aaa] opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                      {item.date}
+              <div
+                key={idx}
+                className="group flex items-center gap-3 sm:gap-4 py-2.5 sm:py-3"
+              >
+                <img
+                  src={item.logoSrc}
+                  alt={item.company}
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-md object-cover flex-shrink-0 bg-[#1a1a1a]"
+                />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-sm sm:text-base font-semibold text-white">
+                      {item.role}
                     </span>
-                    <ChevronDown
-                      size={12}
-                      className={`text-[#aaa] transition-transform duration-200 ${openIdx === idx ? 'rotate-180' : ''}`}
-                    />
+                    <span className="text-sm sm:text-base text-[#666]">
+                      @ {item.company}
+                    </span>
                   </div>
-                </button>
-
-                {/* Dropdown content */}
-                <div className={`overflow-hidden transition-all duration-200 ease-out ${openIdx === idx ? 'max-h-40 pb-2.5 sm:pb-4' : 'max-h-0'}`}>
-                  <p className="text-xs sm:text-sm text-[#666] leading-relaxed pl-8 sm:pl-10 pr-4">
-                    {item.content}
+                  <p className="text-xs sm:text-sm text-[#555] mt-0.5 truncate">
+                    {item.desc}
                   </p>
                 </div>
-
+                <span className="text-xs text-[#444] whitespace-nowrap flex-shrink-0 hidden sm:block">
+                  {item.date}
+                </span>
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Links */}
-        <div className="flex items-center gap-4 sm:gap-5">
-          <a href={profile.github}   target="_blank" rel="noreferrer" className="text-[10px] sm:text-xs text-[#aaa] hover:text-black transition-colors duration-150">github</a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-[10px] sm:text-xs text-[#aaa] hover:text-black transition-colors duration-150">linkedin</a>
-          <a href={`mailto:${profile.email}`}                         className="text-[10px] sm:text-xs text-[#aaa] hover:text-black transition-colors duration-150">email</a>
         </div>
-
       </main>
+
+      {/* Footer links */}
+      <footer className="flex-shrink-0 pb-6 sm:pb-10 flex items-center justify-center gap-6 sm:gap-8">
+        <a
+          href={profile.github}
+          target="_blank"
+          rel="noreferrer"
+          className="text-xs sm:text-sm text-[#555] hover:text-white transition-colors duration-150 underline underline-offset-4 decoration-[#333]"
+        >
+          github
+        </a>
+        <a
+          href={profile.linkedin}
+          target="_blank"
+          rel="noreferrer"
+          className="text-xs sm:text-sm text-[#555] hover:text-white transition-colors duration-150 underline underline-offset-4 decoration-[#333]"
+        >
+          linkedin
+        </a>
+        <a
+          href={`mailto:${profile.email}`}
+          className="text-xs sm:text-sm text-[#555] hover:text-white transition-colors duration-150 underline underline-offset-4 decoration-[#333]"
+        >
+          email
+        </a>
+      </footer>
     </div>
   );
 };
