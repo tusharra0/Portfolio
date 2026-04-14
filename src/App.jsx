@@ -1,18 +1,12 @@
-import AmazonLogo from './assets/logos/Amazon.jpg';
-import UofTLogo from './assets/logos/Utoronto_coa.svg';
-import GDSCLogo from './assets/logos/GDSC.jpg';
-import UofTAILogo from './assets/logos/uoftailogo.jpg';
-
-const ConstructsLogo = () => (
-  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-[#f0f0f0] border border-[#e0e0e0] flex items-center justify-center flex-shrink-0">
-    <span className="text-black text-xs sm:text-sm font-bold">C.</span>
-  </div>
-);
+import AmazonLogo from './assets/logos/amazon_logo (1).jpg';
+import UofTAILogo from './assets/logos/UofTAI_Logo.fcbdda1a2c787027706b (1).png';
+import BidEngineLogo from './assets/logos/BidEngine.png';
+import FlymingosLogo from './assets/logos/Flymingos.jpg';
 
 const App = () => {
   const profile = {
     email: "tusharpatangemohan@gmail.com",
-    github: "https://github.com/tusharrao0",
+    github: "https://github.com/tusharra0",
     linkedin: "https://linkedin.com/in/tusharra0",
   };
 
@@ -25,27 +19,20 @@ const App = () => {
       date: "summer 2026",
     },
     {
-      logo: "constructs",
-      company: "constructai",
+      logoSrc: BidEngineLogo,
+      company: "bidengine",
       role: "founding engineer",
       desc: "ai-powered construction tender estimation",
       date: "2025 - present",
     },
     {
-      logoSrc: UofTLogo,
-      company: "uoft",
+      logoSrc: FlymingosLogo,
+      company: "flymingos",
       role: "software engineer intern",
       desc: "ai matchmaking engine with openai embeddings & vector search",
       date: "summer 2025",
     },
-    {
-      logoSrc: GDSCLogo,
-      company: "gdsc",
-      role: "student software engineer",
-      desc: "full stack trading simulator, ml price forecasting",
-      date: "winter 2025",
-    },
-    {
+{
       logoSrc: UofTAILogo,
       company: "uoft ai",
       role: "web developer",
@@ -85,8 +72,8 @@ const App = () => {
             </p>
             <p>
               currently building{' '}
-              <a href="https://constructsai.com" target="_blank" rel="noreferrer" className="inline-link">
-                constructai
+              <a href="https://bidengine.ca" target="_blank" rel="noreferrer" className="inline-link">
+                bidengine.ca
               </a>
               {' '}— ai that estimates construction tenders.
             </p>
@@ -105,15 +92,11 @@ const App = () => {
                 key={idx}
                 className="group flex items-center gap-3 sm:gap-4 py-2 sm:py-2.5"
               >
-                {item.logo === "constructs" ? (
-                  <ConstructsLogo />
-                ) : (
-                  <img
-                    src={item.logoSrc}
-                    alt={item.company}
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-md object-cover flex-shrink-0 bg-white"
-                  />
-                )}
+                <img
+                  src={item.logoSrc}
+                  alt={item.company}
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-md object-cover flex-shrink-0 bg-white"
+                />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-2">
                     <span className="text-sm sm:text-base font-semibold text-black">
