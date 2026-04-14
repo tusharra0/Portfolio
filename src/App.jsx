@@ -115,9 +115,9 @@ const App = () => {
         <div className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-y-6 md:gap-x-12 lg:gap-x-20">
           <p className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-[#333] self-start pt-0.5">about</p>
           <div className="text-sm sm:text-base text-[#666] leading-relaxed space-y-3">
-            <p>third year cs student at{' '}<a href="https://www.utoronto.ca" target="_blank" rel="noreferrer" className="text-[#999] underline underline-offset-3 decoration-[#222] hover:text-[#e8630a] hover:decoration-[#e8630a] transition-colors">u of t</a>, joining{' '}<a href="https://www.amazon.com" target="_blank" rel="noreferrer" className="text-[#999] underline underline-offset-3 decoration-[#222] hover:text-[#e8630a] hover:decoration-[#e8630a] transition-colors">amazon</a>{' '}this summer.</p>
-            <p>currently building{' '}<a href="https://bidengine.ca" target="_blank" rel="noreferrer" className="text-[#999] underline underline-offset-3 decoration-[#222] hover:text-[#e8630a] hover:decoration-[#e8630a] transition-colors">bidengine.ca</a>{' '}&mdash; ai that estimates construction tenders.</p>
-            <p>interested in applied ai, backend, and distributed systems.</p>
+            <p>third year cs student at{' '}<a href="https://www.utoronto.ca" target="_blank" rel="noreferrer" className="text-[#999] underline underline-offset-3 decoration-[#222] hover:text-[#e8630a] hover:decoration-[#e8630a] transition-colors">u of t</a>, headed to{' '}<a href="https://www.amazon.com" target="_blank" rel="noreferrer" className="text-[#999] underline underline-offset-3 decoration-[#222] hover:text-[#e8630a] hover:decoration-[#e8630a] transition-colors">amazon</a>{' '}for the summer as an sde intern.</p>
+            <p>i like applied ai, backend, and distributed systems where latency and scale matter.</p>
+            <p>my favorite languages to code in are golang and rust.</p>
           </div>
 
           <p className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-[#333] self-start pt-1 mt-4 md:mt-6">experience</p>
