@@ -44,7 +44,7 @@ const ExperienceCard = ({ item }) => {
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: open ? '300px' : '0', opacity: open ? 1 : 0 }}
       >
-        <div className="pl-11 sm:pl-[52px] pb-4 pr-3">
+        <div className="pl-[44px] sm:pl-[52px] pb-4 pr-2 sm:pr-3">
           <ul className="space-y-1.5">
             {item.details.map((detail, i) => (
               <li key={i} className="text-xs sm:text-sm text-neutral-400 leading-relaxed flex gap-2">
@@ -140,7 +140,7 @@ const App = () => {
   ];
 
   return (
-    <div className="min-h-screen min-h-[100dvh] w-screen overflow-y-auto overflow-x-hidden flex flex-col items-center bg-[#0a0a0a] text-white">
+    <div className="min-h-[100dvh] w-screen overflow-y-auto overflow-x-hidden flex flex-col items-center bg-[#0a0a0a] text-white">
 
       {/* Grain overlay */}
       <div className="fixed inset-0 pointer-events-none z-[9999]" style={{
@@ -152,7 +152,7 @@ const App = () => {
         <Name />
       </header>
 
-      <main className="flex-1 w-full max-w-2xl mx-auto px-5 sm:px-8 flex flex-col justify-center py-4 sm:py-0">
+      <main className="flex-1 w-full max-w-2xl mx-auto px-5 sm:px-8 flex flex-col py-4 sm:py-0 sm:justify-center">
         <div className="space-y-10 sm:space-y-14">
 
           {/* About */}
@@ -178,7 +178,7 @@ const App = () => {
         </div>
       </main>
 
-      <footer className="flex-shrink-0 py-8 sm:py-12 flex items-center justify-center gap-8">
+      <footer className="flex-shrink-0 py-6 sm:py-12 flex items-center justify-center gap-6 sm:gap-8">
         {[
           { href: profile.github, label: 'GitHub' },
           { href: profile.linkedin, label: 'LinkedIn' },
