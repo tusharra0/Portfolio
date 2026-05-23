@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import AmazonLogo from './assets/logos/amazon_logo (1).jpg';
 import UofTAILogo from './assets/logos/UofTAI_Logo.fcbdda1a2c787027706b (1).png';
 import BidEngineLogo from './assets/logos/BidEngine.png';
-import FlymingosLogo from './assets/logos/Flymingos.jpg';
-import GDSCLogo from './assets/logos/GDSC_Logo_White_Background_0 (1).png';
+import TotalisLogo from './assets/logos/totalis.png';
+import MunafahLogo from './assets/logos/munafah.ai.jpg';
+import UofTCompSciLogo from './assets/logos/uoftcompsci_logo.jpg';
 
 const Name = () => (
   <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-center select-none px-4 text-white">
@@ -23,10 +24,9 @@ const ExperienceCard = ({ item }) => {
         <img src={item.logoSrc} alt={item.company} className="w-8 h-8 sm:w-9 sm:h-9 rounded-md object-cover flex-shrink-0 mt-0.5 sm:mt-0" />
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-baseline gap-x-2">
-            <span className="text-[15px] sm:text-base font-medium text-neutral-200">{item.role}</span>
-            <span className="text-[15px] sm:text-base text-neutral-500">{item.company}</span>
+            <span className="text-[15px] sm:text-base font-medium text-neutral-200">{item.company}</span>
+            <span className="text-[15px] sm:text-base text-neutral-500">{item.role}</span>
           </div>
-          <p className="text-xs sm:text-sm text-neutral-600 mt-0.5">{item.summary}</p>
           <p className="text-[10px] sm:hidden text-neutral-600 mt-0.5">{item.date}</p>
         </div>
         <div className="flex items-center gap-3 flex-shrink-0">
@@ -42,24 +42,10 @@ const ExperienceCard = ({ item }) => {
 
       <div
         className="overflow-hidden transition-all duration-300 ease-in-out"
-        style={{ maxHeight: open ? '300px' : '0', opacity: open ? 1 : 0 }}
+        style={{ maxHeight: open ? '500px' : '0', opacity: open ? 1 : 0 }}
       >
         <div className="pl-[44px] sm:pl-[52px] pb-4 pr-2 sm:pr-3">
-          <ul className="space-y-1.5">
-            {item.details.map((detail, i) => (
-              <li key={i} className="text-xs sm:text-sm text-neutral-400 leading-relaxed flex gap-2">
-                <span className="text-neutral-600 mt-1 flex-shrink-0">—</span>
-                <span>{detail}</span>
-              </li>
-            ))}
-          </ul>
-          {item.tech && (
-            <div className="flex flex-wrap gap-1.5 mt-3">
-              {item.tech.map((t, i) => (
-                <span key={i} className="text-[10px] sm:text-[11px] px-2 py-0.5 rounded-full bg-white/[0.05] text-neutral-500">{t}</span>
-              ))}
-            </div>
-          )}
+          <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">{item.description}</p>
         </div>
       </div>
     </div>
@@ -78,64 +64,43 @@ const App = () => {
       logoSrc: AmazonLogo,
       company: "Amazon",
       role: "Software Dev Intern, AI",
-      summary: "incoming sde intern, amazon ring",
-      date: "may – aug 2026",
-      details: [
-        "joining the ring ai team for summer 2026",
-      ],
-      tech: ["python", "aws"],
+      date: "May 2026 - August 2026",
+      description: "Currently working on shipping consumer facing LLM agent feature to 10M+ Ring users in production across iOS, Android, and web clients.",
+    },
+    {
+      logoSrc: TotalisLogo,
+      company: "Totalis",
+      role: "Software Engineer, Part Time",
+      date: "March 2026 - May 2026",
+      description: "I built a Rust matching engine on Tokio with price-time priority for parlay leg fills. I shipped a Go state machine coordinating N-leg resolution and a Solana Anchor program in Rust for USDC escrow and payouts.",
     },
     {
       logoSrc: BidEngineLogo,
       company: "BidEngine",
       role: "Founding Engineer",
-      summary: "ai-powered construction tender estimation",
-      date: "nov 2025 – apr 2026",
-      details: [
-        "built an ai pipeline that parses construction tender documents and generates cost estimates",
-        "designed the full stack from document ingestion to estimate delivery using llms and structured extraction",
-        "owner of backend architecture, api design, and deployment infrastructure",
-      ],
-      tech: ["python", "react", "openai", "postgresql", "aws"],
+      date: "January 2026 - Present",
+      description: "I designed the AI estimation flow for a construction tender platform. Shipped a Python LLM pipeline parsing spec PDFs into line items, a LangGraph agent flagging low confidence matches for review, and a Spring Boot MCP server on Azure AKS coordinating tender invitations across bidder pools.",
     },
     {
-      logoSrc: FlymingosLogo,
-      company: "Flymingos",
+      logoSrc: MunafahLogo,
+      company: "Munafah.ai",
       role: "Software Engineer Intern",
-      summary: "ai matchmaking engine with embeddings & vector search",
-      date: "may – aug 2025",
-      details: [
-        "built an ai-driven matchmaking engine using openai embeddings and vector similarity search",
-        "designed and implemented the matching algorithm pipeline from user profiling to ranked results",
-        "integrated with existing backend services and optimized query latency for real-time matching",
-      ],
-      tech: ["node.js", "openai", "pinecone", "mongodb", "react"],
+      date: "May 2025 - August 2025",
+      description: "I cut Firestore read latency 70% across 50K+ records using composite indexes and Redis. Wrote a buyer to supplier matching service with OpenAI embeddings in Chroma under 200ms, on an event driven TypeScript backend serving 750+ users.",
     },
     {
-      logoSrc: GDSCLogo,
-      company: "GDSC",
+      logoSrc: UofTCompSciLogo,
+      company: "University of Toronto",
       role: "Student ML Engineer",
-      summary: "full stack ml stock trading simulator",
-      date: "jan – apr 2025",
-      details: [
-        "built a full stack ml stock trading simulator in a 4-person team with live market data",
-        "trained lstm, rnn, and knn models with tensorflow and scikit-learn for real-time price forecasting and backtesting",
-        "engineered a data pipeline with yahoo finance api, processing 10,000+ data points per minute with batched writes",
-      ],
-      tech: ["react", "flask", "mongodb", "tensorflow", "scikit-learn"],
+      date: "January 2025 - April 2025",
+      description: "I made a full stack ML trading simulator with a 4 person team. Built a Yahoo Finance pipeline processing 10,000+ data points per minute and trained LSTM, RNN, and KNN models for real time price forecasting and backtesting.",
     },
     {
       logoSrc: UofTAILogo,
       company: "UofT AI",
       role: "Web Developer",
-      summary: "responsive web apps with react & chakra ui",
-      date: "sep – dec 2024",
-      details: [
-        "developed responsive web applications for the uoft ai club using react and chakra ui",
-        "collaborated with designers and other developers to ship features on a weekly cadence",
-        "improved site performance and accessibility across mobile and desktop",
-      ],
-      tech: ["react", "chakra ui", "javascript"],
+      date: "September 2024 - December 2024",
+      description: "I wrote some React and Chakra UI for the UofT AI club. Shipped features weekly with designers and other devs.",
     },
   ];
 
