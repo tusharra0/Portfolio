@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import AmazonLogo from './assets/logos/amazon_logo (1).jpg';
 import UofTAILogo from './assets/logos/UofTAI_Logo.fcbdda1a2c787027706b (1).png';
 import BidEngineLogo from './assets/logos/BidEngine.png';
-import TotalisLogo from './assets/logos/totalis.png';
 import MunafahLogo from './assets/logos/munafah.ai.jpg';
 import UofTCompSciLogo from './assets/logos/uoftcompsci_logo.jpg';
 
@@ -66,13 +65,6 @@ const App = () => {
       role: "Software Dev Intern, AI",
       date: "May 2026 - August 2026",
       description: "Currently working on shipping consumer facing LLM agent feature to 10M+ Ring users in production across iOS, Android, and web clients.",
-    },
-    {
-      logoSrc: TotalisLogo,
-      company: "Totalis",
-      role: "Software Engineer, Part Time",
-      date: "March 2026 - May 2026",
-      description: "I built a Rust matching engine on Tokio with price-time priority for parlay leg fills. I shipped a Go state machine coordinating N-leg resolution and a Solana Anchor program in Rust for USDC escrow and payouts.",
     },
     {
       logoSrc: BidEngineLogo,
