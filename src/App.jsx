@@ -6,7 +6,6 @@ import {
   AccordionContent,
 } from './components/ui/accordion';
 import AmazonLogo from './assets/logos/amazon_logo (1).jpg';
-import UofTAILogo from './assets/logos/UofTAI_Logo.fcbdda1a2c787027706b (1).png';
 import BidEngineLogo from './assets/logos/BidEngine.png';
 import MunafahLogo from './assets/logos/munafah.ai.jpg';
 import UofTCompSciLogo from './assets/logos/uoftcompsci_logo.jpg';
@@ -117,13 +116,6 @@ const App = () => {
       role: "Student ML Engineer",
       date: "January 2025 - April 2025",
       description: "I made a full stack ML trading simulator with a 4 person team. Built a Yahoo Finance pipeline processing 10,000+ data points per minute and trained LSTM, RNN, and KNN models for real time price forecasting and backtesting.",
-    },
-    {
-      logoSrc: UofTAILogo,
-      company: "UofT AI",
-      role: "Web Developer",
-      date: "September 2024 - December 2024",
-      description: "I wrote some React and Chakra UI for the UofT AI club. Shipped features weekly with designers and other devs.",
     },
   ];
 
